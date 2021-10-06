@@ -3,7 +3,7 @@ My personal dotfiles
 
 ## Installation
 
-1. Install this repo with `curl`:
+1. Install this repo with `curl` (assumes a zsh shell):
 
 ```bash
 zsh -c "`curl -fsSL https://raw.githubusercontent.com/jhurray/dotfiles/master/install.sh`"
