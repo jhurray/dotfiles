@@ -7,6 +7,15 @@ is_executable() {
   type "$1" > /dev/null 2>&1
 }
 
+if is_executable "curl"; then
+  echo "Installing Oh My ZSH..."
+  CMD="sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)""
+  eval "$CMD"
+else;
+  echo "Curl not available. Aborting."
+  return 1
+fi
+
 if is_executable "git"; then
   CMD="git clone $SOURCE $TARGET"
   echo "Installing dotfiles..."
@@ -14,6 +23,7 @@ if is_executable "git"; then
   eval "$CMD"
 else;
   echo "Git not available. Aborting."
+  return 1
 fi
 
 cd $TARGET
@@ -26,3 +36,5 @@ if [ $INPUT = "Y" -o $INPUT = "y" ]; then
 else
   echo "Run './link.sh <directory>' to link dotfiles to said directory."
 fi
+
+return 0
