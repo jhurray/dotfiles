@@ -6,7 +6,7 @@ My personal dotfiles
 1. Install this repo with `curl`:
 
 ```bash
-bash -c "`curl -fsSL https://raw.githubusercontent.com/jhurray/dotfiles/master/install.sh`"
+zsh -c "`curl -fsSL https://raw.githubusercontent.com/jhurray/dotfiles/master/install.sh`"
 ```
 
 This will clone or download, this repo to `~/.dotfiles` depending on the availability of `git`.
