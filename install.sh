@@ -9,7 +9,8 @@ is_executable() {
 
 if is_executable "curl"; then
   echo "Installing Oh My ZSH..."
-  CMD="sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)""
+  CURL_CMD="curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+  CMD="sh -c $CURL_CMD"
   eval "$CMD"
 else;
   echo "Curl not available. Aborting."
@@ -17,6 +18,7 @@ else;
 fi
 
 if is_executable "git"; then
+  rm -rf $TARGET
   CMD="git clone $SOURCE $TARGET"
   echo "Installing dotfiles..."
   mkdir -p "$TARGET"
