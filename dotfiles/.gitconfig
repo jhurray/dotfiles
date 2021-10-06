@@ -1,0 +1,7 @@
+[core]
+	excludesfile = /Users/jhurray/.gitignore_global
+[user]
+	email = jhurray@umich.edu
+	name = Jeff Hurray
+[pull]
+	rebase = true
