@@ -11,8 +11,9 @@ file_exists() {
 
 # Use passed arg or home path
 TARGET_PATH=${1:-$HOME}
+DOTF_PATH="$TARGET_PATH/.dotfiles/dotfiles/"
 
-for FILE in $(ls -A dotfiles/); 
+for FILE in $(ls -A $DOTF_PATH); 
 do
     rm $TARGET_PATH/$FILE
     echo "Removing $TARGET_PATH/$FILE"

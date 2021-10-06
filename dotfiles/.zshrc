@@ -105,5 +105,5 @@ VSCODE=code
 # Example aliases
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias config="code ~/.zshrc"
-
-
+alias openfiles="code $(find . -maxdepth 1 -type f)"
+alias linkdotf="~/.dotfiles/link.sh"
